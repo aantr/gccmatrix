@@ -30,7 +30,7 @@ volatile unsigned int* NeoPixel::pwm_reg=0;
 volatile unsigned int* NeoPixel::clk_reg=0;
 volatile unsigned int* NeoPixel::dma_reg=0;
 volatile unsigned int* NeoPixel::gpio_reg=0;
-#define GPIOLEDPIN 18
+
 // PUBLIC
 
 NeoPixel::NeoPixel(unsigned int n)
@@ -311,7 +311,7 @@ void NeoPixel::initHardware(){
 
 
     // Set PWM alternate function for GPIO18
-    SET_GPIO_ALT(GPIOLEDPIN, 5);
+    SET_GPIO_ALT(18, 5);
 
     // Allocate memory for the DMA control block & data to be sent
     virtbase = (uint8_t*) mmap(
